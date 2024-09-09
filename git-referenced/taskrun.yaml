@@ -11,4 +11,4 @@ spec:
       - name: revision
         value: main
       - name: pathInRepo
-        value: git-referenced/taskrun.yaml
+        value: git-referenced/collect-data-task.yaml
