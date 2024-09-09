@@ -1,0 +1,14 @@
+apiVersion: tekton.dev/v1
+kind: TaskRun
+metadata:
+  generateName: test-
+spec:
+  taskRef:
+    resolver: "git"
+    params:
+      - name: url
+        value: https://github.com/scoheb/test-stepactions
+      - name: revision
+        value: main
+      - name: pathInRepo
+        value: git-referenced/taskrun.yaml
