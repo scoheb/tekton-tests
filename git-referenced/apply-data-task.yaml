@@ -1,0 +1,21 @@
+---
+apiVersion: tekton.dev/v1
+kind: Task
+metadata:
+  name: apply-data
+  labels:
+    app.kubernetes.io/version: "4.5.1"
+  annotations:
+    tekton.dev/pipelines.minVersion: "0.12.1"
+    tekton.dev/tags: release
+spec:
+  params:
+    - name: resultsDir
+      type: string
+  steps:
+    - name: apply-data
+      image: quay.io/konflux-ci/release-service-utils:e633d51cd41d73e4b3310face21bb980af7a662f
+      script: |
+        #!/usr/bin/env sh
+        set -x
+        echo -n "resultsDir: $(params.resultsDir)"
