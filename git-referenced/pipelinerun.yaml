@@ -3,7 +3,7 @@ kind: PipelineRun
 metadata:
   generateName: test-
 spec:
-  taskRef:
+  PipelineRef:
     resolver: "git"
     params:
       - name: url
