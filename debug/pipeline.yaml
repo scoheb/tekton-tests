@@ -27,6 +27,6 @@ spec:
             value: debug/apply-data-task.yaml
       params:
         - name: resultsDir
-          value: "$(tasks.collect-data.resultsDir.data)"
+          value: "$(tasks.collect-data.results.resultsDir)"
       runAfter:
         - collect-data
