@@ -13,7 +13,7 @@ spec:
     Tekton task to collect data from release resources and verify that they do not contain any
     disallowed fields
   results:
-    - name: singleComponentMode
+    - name: resultsDir
       type: string
   steps:
     - name: collect-data
@@ -27,6 +27,8 @@ spec:
         SINGLE_COMPONENT_MODE="scott"
 
         echo -n "${SINGLE_COMPONENT_MODE}" > $(step.results.singleComponentMode.path)
+        echo -n "scott" > $(results.resultsDir.path)
+
     - name: reduce
       params:
         - name: SINGLE_COMPONENT
