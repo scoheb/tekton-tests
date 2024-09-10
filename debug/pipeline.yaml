@@ -1,0 +1,30 @@
+---
+apiVersion: tekton.dev/v1
+kind: Pipeline
+metadata:
+  name: test-pipeline
+spec:
+  tasks:
+    - name: collect-data
+      taskRef:
+        resolver: "git"
+        params:
+          - name: url
+            value: https://github.com/scoheb/test-stepactions
+          - name: revision
+            value: main
+          - name: pathInRepo
+            value: debug/collect-data-task.yaml
+    - name: apply-data
+      taskRef:
+        resolver: "git"
+        params:
+          - name: url
+            value: https://github.com/scoheb/test-stepactions
+          - name: revision
+            value: main
+          - name: pathInRepo
+            value: debug/apply-data-task.yaml
+      params:
+        - name: resultsDir
+          value: "$(tasks.collect-data.resultsDir.data)"
