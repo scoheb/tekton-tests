@@ -27,7 +27,8 @@ spec:
         SINGLE_COMPONENT_MODE="scott"
 
         echo -n "${SINGLE_COMPONENT_MODE}" > $(step.results.singleComponentMode.path)
-        echo -n "scott" > $(results.resultsDir.path)
+
+        echo -n "tom" > $(results.resultsDir.path)
 
     - name: reduce
       params:
@@ -42,4 +43,3 @@ spec:
             value: main
           - name: pathInRepo
             value: git-referenced/my-stepaction.yaml
-

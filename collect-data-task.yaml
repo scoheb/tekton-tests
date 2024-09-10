@@ -3,15 +3,7 @@ apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: collect-data
-  labels:
-    app.kubernetes.io/version: "4.5.1"
-  annotations:
-    tekton.dev/pipelines.minVersion: "0.12.1"
-    tekton.dev/tags: release
 spec:
-  description: >-
-    Tekton task to collect data from release resources and verify that they do not contain any
-    disallowed fields
   results:
     - name: resultsDir
       type: string
@@ -27,7 +19,8 @@ spec:
         SINGLE_COMPONENT_MODE="scott"
 
         echo -n "${SINGLE_COMPONENT_MODE}" > $(step.results.singleComponentMode.path)
-        echo -n "scott" > $(results.resultsDir.path)
+        echo -n "tom" > $(results.resultsDir.path)
+
     - name: reduce
       params:
         - name: SINGLE_COMPONENT
