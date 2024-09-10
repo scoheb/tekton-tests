@@ -1,9 +1,9 @@
 apiVersion: tekton.dev/v1
-kind: TaskRun
+kind: PipelineRun
 metadata:
-  generateName: test-
+  generateName: test-plr
 spec:
-  taskRef:
+  PipelineRef:
     resolver: "git"
     params:
       - name: url
@@ -11,4 +11,4 @@ spec:
       - name: revision
         value: main
       - name: pathInRepo
-        value: debug/collect-data-task.yaml
+        value: without-stepsresults/pipeline.yaml

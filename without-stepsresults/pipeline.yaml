@@ -14,7 +14,7 @@ spec:
           - name: revision
             value: main
           - name: pathInRepo
-            value: debug/collect-data-task.yaml
+            value: without-stepsresults/collect-data-task.yaml
     - name: apply-data
       taskRef:
         resolver: "git"
@@ -24,7 +24,7 @@ spec:
           - name: revision
             value: main
           - name: pathInRepo
-            value: debug/apply-data-task.yaml
+            value: without-stepsresults/apply-data-task.yaml
       params:
         - name: resultsDir
           value: "$(tasks.collect-data.results.resultsDir)"
