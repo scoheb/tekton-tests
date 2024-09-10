@@ -2,7 +2,7 @@
 apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
-  generateName: test-pipeline
+  name: test-pipeline
 spec:
   tasks:
     - name: collect-data
