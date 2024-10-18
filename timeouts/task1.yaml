@@ -7,12 +7,13 @@ spec:
   steps:
     - name: step1
       image: quay.io/konflux-ci/release-service-utils:e633d51cd41d73e4b3310face21bb980af7a662f
-      env:
-        - name: pyxisCert
-          valueFrom:
-            secretKeyRef:
-              name: pyxiscert
-              key: cert
+      computeResources:
+        limits:
+          memory: 128Mi
+          cpu: '2'
+        requests:
+          memory: 128Mi
+          cpu: '2'
       script: |
         #!/usr/bin/env sh
         set -x
