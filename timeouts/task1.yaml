@@ -11,7 +11,7 @@ spec:
         - name: pyxisCert
           valueFrom:
             secretKeyRef:
-              name: pyxisCert
+              name: pyxiscert
               key: cert
       script: |
         #!/usr/bin/env sh
