@@ -6,7 +6,7 @@ metadata:
 spec:
   tasks:
     - name: task1
-      timeout: "0h02m0s"
+      timeout: "0h5m0s"
       taskRef:
         resolver: "git"
         params:
