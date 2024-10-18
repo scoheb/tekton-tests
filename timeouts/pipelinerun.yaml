@@ -1,0 +1,14 @@
+apiVersion: tekton.dev/v1
+kind: PipelineRun
+metadata:
+  generateName: test-timeouts-plr-
+spec:
+  PipelineRef:
+    resolver: "git"
+    params:
+      - name: url
+        value: https://github.com/scoheb/tekton-tests
+      - name: revision
+        value: main
+      - name: pathInRepo
+        value: timeouts/pipeline.yaml

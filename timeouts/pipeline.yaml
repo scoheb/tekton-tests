@@ -1,0 +1,17 @@
+---
+apiVersion: tekton.dev/v1
+kind: Pipeline
+metadata:
+  name: test-timeouts-pipeline
+spec:
+  tasks:
+    - name: task1
+      taskRef:
+        resolver: "git"
+        params:
+          - name: url
+            value: https://github.com/scoheb/tekton-tests
+          - name: revision
+            value: main
+          - name: pathInRepo
+            value: timeouts/task1.yaml
