@@ -12,3 +12,7 @@ spec:
         value: main
       - name: pathInRepo
         value: timeouts/pipeline.yaml
+  timeouts:
+    pipeline: "0h5m0s"
+    tasks: "0h4m0s"
+    finally: "0h1m0s"
